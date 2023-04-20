@@ -11,3 +11,7 @@ Access the app by visiting http://localhost:8501
 
 # Usage
 Once the app is running, select the necessary input features from the provided dropdowns and input fields to see the prediction results.
+
+# Article 
+An article for this app can be found at 
+https://medium.com/@botchwaykojo/streamlit-unleashing-your-inner-web-developer-with-interactive-app-building-5ec82b2a1c02
