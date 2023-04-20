@@ -137,15 +137,10 @@ def predict_sales(df_from_input):
     # Encoding the categoricals
     encoded_categoricals = encode.transform(categoricals)
 	
-	# make sure that both arrays have the same number of columns
-    if scale_numericals.shape[1] != encoded_categoricals.shape[1]:
-        raise ValueError("Arrays have different number of columns")
 
 	# concatenate the two DataFrames
     final_data = np.concatenate([scale_numericals, encoded_categoricals], axis=1)
 
-     # convert input_data to a numpy array 
-    final_data = final_data.to_numpy()
 	
 
     prediction = model.predict(final_data)
