@@ -17,7 +17,7 @@ layout = "wide", initial_sidebar_state = "auto")
 image = Image.open('sales.png')
 
 # Show the image
-st.image(image, caption='Sales Forecasting', use_column_width=False)
+st.image(image, caption='Sales Forecasting', use_column_width=True)
 
 
 
@@ -90,10 +90,10 @@ with col2:
 with col3:
     holiday_type = st.selectbox("Day Type", options =(data_['holiday_type'].unique()))
     onpromotion = st.selectbox("On Promotion", options=(list( data_['onpromotion'].unique())))
-    oil_price = st.slider("Oil Price", min_value=1, max_value=110, step=1)
+    oil_price = st.number_input("Oil Price", min_value=1, max_value=110, step=1, label_visibility='visible')
 
 # Print the input data to the console
-st.header("Input Data Summary")
+st.header("This Is Your Data")
 st.write("Date:", date)
 st.write("Family:", family)
 st.write("Transactions:", transactions)
@@ -164,7 +164,7 @@ if st.button('Submit'):
 
     prediction = predict_sales(df_from_input)
     # prediction(data_, df_from_input)
-    st.success('Sales is : ' + str(round(prediction[0],2)))
+    st.success(' Predicted Sales is : ' + str(round(prediction[0],2)))
     # st.success('Sales is : ', round(prediction[0],2))
     # st.success(f'Sales is : {prediction}')
 
